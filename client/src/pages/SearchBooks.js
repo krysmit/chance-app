@@ -90,8 +90,8 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
-          <h1>Search for Books!</h1>
-          <Form onSubmit={handleFormSubmit}>
+          <h1>Welcome to Chance App!</h1>
+          {/* <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={8}>
                 <Form.Control
@@ -109,7 +109,7 @@ const SearchBooks = () => {
                 </Button>
               </Col>
             </Form.Row>
-          </Form>
+          </Form> */}
         </Container>
       </Jumbotron>
 
@@ -117,7 +117,7 @@ const SearchBooks = () => {
         <h2>
           {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
-            : 'Search for a book to begin'}
+            : 'Create an account to begin'}
         </h2>
         <CardColumns>
           {searchedBooks.map((book) => {
