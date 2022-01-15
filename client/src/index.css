@@ -8,10 +8,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik Mono One', sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .small {
   font-weight: 300;
   font-style: italic;
 }
+
