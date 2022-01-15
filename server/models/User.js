@@ -51,6 +51,9 @@ userSchema.virtual('bookCount').get(function () {
   return this.SavedResume.length;
 });
 
+userSchema.virtual('appliedJobs').get(function () {
+  return this.appliedJobs.length;
+});
 const User = model('User', userSchema);
 
 module.exports = User;
