@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchBooks from './pages/SearchBooks';
 import SavedResume from './pages/SavedResume';
 import Navbar from './components/Navbar';
