@@ -4,7 +4,7 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 import Auth from '../utils/auth';
 import { searchGoogleBooks } from '../utils/API'
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
-import { SAVE_BOOK } from "../utils/mutations";
+import { SAVE_RESUME } from "../utils/mutations";
 import { useMutation } from "@apollo/react-hooks"
 
 const SearchBooks = () => {
@@ -22,7 +22,7 @@ const SearchBooks = () => {
     return () => saveBookIds(savedBookIds);
   });
 
-  const [saveBook, {error}] = useMutation(SAVE_BOOK);
+  const [saveBook, {error}] = useMutation(SAVE_RESUME);
 
   // create method to search for books and set state on form submit
   const handleFormSubmit = async (event) => {
