@@ -6,15 +6,18 @@ import { ADD_USER } from "../utils/mutations"
 import Auth from '../utils/auth';
 
 const SignupForm = () => {
-  // set initial form state
+  const [addUser, { error }] = useMutation(ADD_USER);
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
-  // set state for form validation
   const [validated] = useState(false);
-  // set state for alert
+  useEffect(() => {
+      if (error) {
+        setShowAlert(true);
+      } else {
+        setShowAlert(false);
+      }
+    }, [error]);
   const [showAlert, setShowAlert] = useState(false);
-
-  const [addUser, { error }] = useMutation( ADD_USER );
-
+  
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
