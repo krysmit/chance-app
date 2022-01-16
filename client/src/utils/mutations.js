@@ -20,19 +20,20 @@ export const ADD_USER = gql`
         _id
         username
         email
-        bookCount
-        SavedResume {
-          authors
-          bookId
-          image
-          link
-          title
-          description
-        }
       }
     }
   }
 `;
+// bookCount
+// SavedResume {
+//   authors
+//   bookId
+//   image
+//   link
+//   title
+//   description
+// }
+
 
 export const SAVE_RESUME = gql`
   mutation saveResume($input: SavedBookInput) {
