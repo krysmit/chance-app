@@ -30,28 +30,28 @@ const resolvers = {
             const token = signToken(user);
             return { token, user }
         },
-        saveBook: async (parent, { content }, { user }) => {
-            if (user) {
-                const updatedUser = await User.findByIdAndUpdate(
-                    { _id: user._id },
-                    { $addToSet: { savedBooks: content } },
-                    { new: true}
-                );
-                return updatedUser;
-            }
-            throw new AuthenticationError('You need to be logged in!')
-        },
-        removeBook: async (parents, { bookId }, { user }) => {
-            if (user) {
-                const modifiedUser = await User.findOneAndUpdate(
-                    { _id: user._id },
-                    { $pull: { savedBooks: { bookId: bookId } } },
-                    { new: true, runValidators: true }
-                );
-                return modifiedUser;
-            }
-            throw new AuthenticationError('You need to be logged in!')
-        },
+        // saveBook: async (parent, { content }, { user }) => {
+        //     if (user) {
+        //         const updatedUser = await User.findByIdAndUpdate(
+        //             { _id: user._id },
+        //             { $addToSet: { savedBooks: content } },
+        //             { new: true}
+        //         );
+        //         return updatedUser;
+        //     }
+        //     throw new AuthenticationError('You need to be logged in!')
+        // },
+        // removeBook: async (parents, { bookId }, { user }) => {
+        //     if (user) {
+        //         const modifiedUser = await User.findOneAndUpdate(
+        //             { _id: user._id },
+        //             { $pull: { savedBooks: { bookId: bookId } } },
+        //             { new: true, runValidators: true }
+        //         );
+        //         return modifiedUser;
+        //     }
+        //     throw new AuthenticationError('You need to be logged in!')
+        // },
     }
 };
 module.exports = resolvers

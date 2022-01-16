@@ -9,6 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 async function startapolloserver() {
+  try{
   const server = new ApolloServer({
     typeDefs,
     resolvers,
@@ -17,8 +18,10 @@ async function startapolloserver() {
   await server.start()
   server.applyMiddleware({ app });
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+}catch(err){
+  console.log(err);
 }
-
+}
 startapolloserver();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
