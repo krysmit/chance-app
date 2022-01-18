@@ -5,11 +5,9 @@ db.once('open', async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: 'Food' },
-    { name: 'Household Supplies' },
-    { name: 'Electronics' },
-    { name: 'Books' },
-    { name: 'Toys' }
+    { name: 'Part Time' },
+    { name: 'Full time' },
+    { name: 'Part time & Full time' },
   ]);
 
   console.log('categories seeded');
@@ -18,112 +16,84 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Tin of Cookies',
-      description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
-      category: categories[0]._id,
-      price: 2.99,
-      quantity: 500
+    jobTitle: 'Cashier',
+    employer:'Target',
+    description:
+        'Target Cashiers are entry-level employees responsible for handling cash registers and providing customer service. Typical duties listed on a Target Cashier resume are greeting customers, collecting payments, managing returns and refunds, answering to customer inquiries, and stocking shelves.',
+    jobId: categories[0]._id,
+    HourlyPay: 15,
     },
     {
-      name: 'Canned Coffee',
+      jobTitle: 'Barista',
+      employer:'Starbucks',
       description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: 'canned-coffee.jpg',
-      category: categories[0]._id,
-      price: 1.99,
-      quantity: 500
+        'Baristas at Starbucks take orders and make coffee, tea, and other drinks to customer specifications. Starbucks baristas may also operate cash registers and credit card machines. Baristas may field customer complaints or questions, as well.',
+      jobId: categories[0]._id,
+      HourlyPay: 21,
     },
     {
-      name: 'Toilet Paper',
-      category: categories[1]._id,
+      jobTitle: 'Stocker',
+      employer:'Menards',
+      jobId: categories[1]._id,
       description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'toilet-paper.jpg',
-      price: 7.99,
-      quantity: 20
+        'Our Stockers play an important role in the Customer Experience by stocking merchandise on the sales floor and ensuring our shelves and displays are full, faced and ready for our Customers!',
+      HourlyPay: 15,
     },
     {
-      name: 'Handmade Soap',
-      category: categories[1]._id,
+      jobTitle: 'Customer Service Representative',
+      employer:'Goodwill',
+      jobId: categories[1]._id,
       description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'soap.jpg',
-      price: 3.99,
-      quantity: 50
+        'Serves customers by providing product and service information and resolving product and service problems. Attracts potential customers by answering product and service questions and suggesting information about other products and services.',
+      HourlyPay: 17,
     },
     {
-      name: 'Set of Wooden Spoons',
-      category: categories[1]._id,
+      jobTitle: 'Janitor',
+      employer:'Bee Line Support, Inc',
+      jobId: categories[1]._id,
       description:
         'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: 'wooden-spoons.jpg',
-      price: 14.99,
-      quantity: 100
+      HourlyPay: 21,
     },
     {
-      name: 'Camera',
-      category: categories[2]._id,
+      jobTitle: 'Airplane Cleaner',
+      employer:'Bee Line Support, Inc',
+      jobId: categories[2]._id,
       description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
-      image: 'camera.jpg',
-      price: 399.99,
-      quantity: 30
+        'An aircraft cleaner cleans and restocks the interior areas of a commercial aircraft. In this career, your responsibilities include cleaning all areas of the passenger cabin, lavatories, galleys, and overhead compartments.',
+      HourlyPay: 15,
     },
     {
-      name: 'Tablet',
-      category: categories[2]._id,
+      jobTitle: 'Baking Assistant',
+      employer:'Jeff and Jeff Baking',
+      jobId: categories[2]._id,
       description:
-        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
-      image: 'tablet.jpg',
-      price: 199.99,
-      quantity: 30
+        'Weigh, sift, measure and mix baking ingredients; prepare and bake breads, rolls, cookies, pies, cakes, biscuits, puddings, cobblers, brownies and other baked good items. Accurately and appropriately utilize the various bakery equipment and if needed, assist with training and monitoring others in its safe usage.',
+      HourlyPay: 17.50,
     },
     {
-      name: 'Tales at Bedtime',
-      category: categories[3]._id,
+      jobTitle: 'Grocery Shopper',
+      employer:'Amazon',
+      jobId: categories[3]._id,
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
-      image: 'bedtime-book.jpg',
-      price: 9.99,
-      quantity: 100
+        'As a personal grocery shopper, your job is to buy and deliver food and other products for customers. ... You help customers with order selection procedures, review orders with customers, safely handle and bag products, record any variances, maintain records, and communicate with call centers or store support.',
+      HourlyPay: 15.35,
     },
     {
-      name: 'Spinning Top',
-      category: categories[4]._id,
+      jobTitle: 'Dog Handler',
+      employer:'Ron Doggy Day Care',
+      jobId: categories[4]._id,
       description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      image: 'spinning-top.jpg',
-      price: 1.99,
-      quantity: 1000
+      HourlyPay: 12.50,
     },
     {
-      name: 'Set of Plastic Horses',
-      category: categories[4]._id,
+      jobTitle: 'Slibrarian',
+      employer:'Northwestern University',
+      jobId: categories[4]._id,
       description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
-      image: 'plastic-horses.jpg',
-      price: 2.99,
-      quantity: 1000
+        'Librarians are responsible for organizing and managing all resources in the library. They have the following responsibilities: Assist library visitors in conducting research and locating resources. Organize all library resources so they are easy to locate. ... Evaluate library inventory needs and place orders.',
+      HourlyPay: 2.99,
     },
-    {
-      name: 'Teddy Bear',
-      category: categories[4]._id,
-      description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
-      image: 'teddy-bear.jpg',
-      price: 7.99,
-      quantity: 100
-    },
-    {
-      name: 'Alphabet Blocks',
-      category: categories[4]._id,
-      description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
-      price: 9.99,
-      quantity: 600
-    }
   ]);
 
   console.log('products seeded');

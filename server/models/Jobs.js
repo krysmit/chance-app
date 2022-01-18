@@ -20,6 +20,10 @@ const jobSchema = new Schema({
     type: String,
     required: true,
   },
+  HourlyPay: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = jobSchema;
