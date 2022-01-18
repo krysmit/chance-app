@@ -19,4 +19,6 @@ router.route('/me').get(authMiddleware, getSingleUser);
 
 router.route('/books/:bookId').delete(authMiddleware, deleteBook);
 
+//route for saving resume "/api/users/resume"
+
 module.exports = router;
