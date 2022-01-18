@@ -3,7 +3,7 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 
 import Auth from '../utils/auth';
 import { searchGoogleBooks } from '../utils/API'
-import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
+import { saveResumeIds, getSavedResumeIds } from '../utils/localStorage';
 import { SAVE_RESUME } from "../utils/mutations";
 import { useMutation } from "@apollo/react-hooks"
 
@@ -14,17 +14,17 @@ const SearchBooks = () => {
   const [searchInput, setSearchInput] = useState('');
 
   // create state to hold saved bookId values
-  const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
+  const [savedBookIds, setSavedBookIds] = useState(getSavedResumeIds());
 
   // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
-  useEffect(() => {
-    return () => saveBookIds(savedBookIds);
-  });
+  // useEffect(() => {
+  //   return () => saveBookIds(savedBookIds);
+  // });
 
   const [saveBook, {error}] = useMutation(SAVE_RESUME);
 
-  // create method to search for books and set state on form submit
+  // create method to search and set state on form submit
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 

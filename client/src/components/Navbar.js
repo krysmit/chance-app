@@ -26,7 +26,7 @@ const AppNavbar = () => {
               <Nav.Link as={Link} to='/' className='text-dark'>
                 Job List
               </Nav.Link>
-              {/* if user is logged in show saved books and logout */}
+              {/* if user is logged in show saved resume and logout */}
               {Auth.loggedIn() ? (
                 <>
                   {/* <Nav.Link as={Link} to='/saved'>
