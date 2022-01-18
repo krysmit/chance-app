@@ -20,7 +20,7 @@ const AppNavbar = () => {
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
-              <Nav.Link as={Link} to='/' className='text-dark'>
+            <Nav.Link as={Link} to='/resume' className='text-dark'>
                 <p>Resume Form</p>
               </Nav.Link>
               <Nav.Link as={Link} to='/' className='text-dark'>
