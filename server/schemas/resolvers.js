@@ -30,17 +30,17 @@ const resolvers = {
             const token = signToken(user);
             return { token, user }
         },
-        // saveBook: async (parent, { content }, { user }) => {
-        //     if (user) {
-        //         const updatedUser = await User.findByIdAndUpdate(
-        //             { _id: user._id },
-        //             { $addToSet: { savedBooks: content } },
-        //             { new: true}
-        //         );
-        //         return updatedUser;
-        //     }
-        //     throw new AuthenticationError('You need to be logged in!')
-        // },
+        saveResume: async (parent, { input }, { user }) => {
+            if (user) {
+                const updatedUser = await User.findByIdAndUpdate(
+                    { _id: user._id },
+                    { $addToSet: { SavedResume: input } },
+                    { new: true}
+                );
+                return updatedUser;
+            }
+            throw new AuthenticationError('You need to be logged in!')
+        },
         // removeBook: async (parents, { bookId }, { user }) => {
         //     if (user) {
         //         const modifiedUser = await User.findOneAndUpdate(
