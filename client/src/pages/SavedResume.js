@@ -31,7 +31,7 @@ const SavedResume = () => {
       // }
 
       // upon success, remove book's id from localStorage
-      removeBookId(bookId);
+      removeResumeId(bookId);
     } catch (err) {
       console.error(err);
     }
