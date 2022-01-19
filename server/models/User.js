@@ -24,9 +24,9 @@ const userSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'Resume'
     },
-    // set SavedResume to be an array of data that adheres to the jobSchema
+    // set SavedJobs to be an array of data that adheres to the jobSchema
 
-    // SavedResume: [jobSchema],
+    // SavedJobs: [jobSchema],
 
   },
   // set this to use virtual below
@@ -54,7 +54,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
 
 // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
 // userSchema.virtual('bookCount').get(function () {
-//   return this.SavedResume.length;
+//   return this.SavedJobs.length;
 // });
 
 userSchema.virtual('appliedJobs').get(function () {
