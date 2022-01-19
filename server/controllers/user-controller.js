@@ -42,14 +42,14 @@ module.exports = {
     const token = signToken(user);
     res.json({ token, user });
   },
-  // save a book to a user's `SavedResume` field by adding it to the set (to prevent duplicates)
+  // save a book to a user's `SavedJobs` field by adding it to the set (to prevent duplicates)
   // user comes from `req.user` created in the auth middleware function
   async saveBook({ user, body }, res) {
     console.log(user);
     try {
       const updatedUser = await User.findOneAndUpdate(
         { _id: user._id },
-        { $addToSet: { SavedResume: body } },
+        { $addToSet: { SavedJobs: body } },
         { new: true, runValidators: true }
       );
       return res.json(updatedUser);
@@ -58,11 +58,11 @@ module.exports = {
       return res.status(400).json(err);
     }
   },
-  // remove a book from `SavedResume`
+  // remove a book from `SavedJobs`
   async deleteBook({ user, params }, res) {
     const updatedUser = await User.findOneAndUpdate(
       { _id: user._id },
-      { $pull: { SavedResume: { bookId: params.bookId } } },
+      { $pull: { SavedJobs: { bookId: params.bookId } } },
       { new: true }
     );
     if (!updatedUser) {
@@ -75,7 +75,7 @@ module.exports = {
     try {
       const updatedUser = await User.findOneAndUpdate(
         { _id: user._id },
-        { $addToSet: { SavedResume: body } },
+        { $addToSet: { SavedJobs: body } },
         { new: true, runValidators: true }
       );
       return res.json(updatedUser);

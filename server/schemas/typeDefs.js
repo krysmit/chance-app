@@ -17,10 +17,18 @@ const typeDefs = gql`
     pastJobs: String!
     skills: String!
   }
+  input SavedJobs {
+    jobTitle: String!
+    employer: String!
+    description: String!
+    jobId: String!
+    HourlyPay: String!
+  }
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     saveResume(input: SavedResume): User
+    saveJobs(input: SavedJobs): User
   }
   type Query {
     me: User

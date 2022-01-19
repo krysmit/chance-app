@@ -5,7 +5,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchBooks from './pages/SearchBooks';
-import SavedResume from './pages/SavedResume';
+import SavedJobs from './pages/SavedJobs';
 import Navbar from './components/Navbar';
 import Resume from './pages/Resume';
 import Home from './pages/home';
@@ -31,7 +31,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path='/' component={SearchBooks} />
-          <Route exact path='/saved' component={SavedResume} />
+          <Route exact path='/saved' component={SavedJobs} />
           <Route exact path='/resume' component={Resume} />
           <Route exact path='/home' component={Home} />
           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
