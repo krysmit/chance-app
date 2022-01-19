@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchBooks from './pages/SearchBooks';
 import SavedResume from './pages/SavedResume';
 import Navbar from './components/Navbar';
+import Resume from './pages/Resume';
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -30,6 +31,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={SearchBooks} />
           <Route exact path='/saved' component={SavedResume} />
+          <Route exact path='/resume' component={Resume} />
           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
         </Switch>
       </>

@@ -24,51 +24,14 @@ export const ADD_USER = gql`
     }
   }
 `;
-// bookCount
-// SavedResume {
-//   authors
-//   bookId
-//   image
-//   link
-//   title
-//   description
-// }
-
-
 export const SAVE_RESUME = gql`
-  mutation saveResume($input: SavedBookInput) {
-    saveResume (input: $input)
-    {
-      _id
-      username
-      bookCount
-      SavedResume {
-        bookId
-        authors
-        image
-        link
-        title
-        description
-      }
-    }
-  }
-`;
-
-export const REMOVE_BOOK = gql`
-  mutation removeBook($bookId: ID!) {
-    removeBook(bookId: $bookId) {
-      _id
+  mutation saveResume($input: SavedResume) {
+    saveResume (input: $input) {
       username
       email
-      bookCount
-      SavedResume {
-        bookId
-        authors
-        image
-        link
-        title
-        description
-      }
+      education
+      pastJobs
+      skills
     }
   }
 `;

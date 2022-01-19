@@ -20,13 +20,13 @@ const AppNavbar = () => {
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
-              <Nav.Link as={Link} to='/' className='text-dark'>
+            <Nav.Link as={Link} to='/resume' className='text-dark'>
                 <p>Resume Form</p>
               </Nav.Link>
               <Nav.Link as={Link} to='/' className='text-dark'>
                 Job List
               </Nav.Link>
-              {/* if user is logged in show saved books and logout */}
+              {/* if user is logged in show saved resume and logout */}
               {Auth.loggedIn() ? (
                 <>
                   {/* <Nav.Link as={Link} to='/saved'>
