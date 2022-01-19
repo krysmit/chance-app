@@ -1,6 +1,6 @@
 {
   "name": "chance-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "server/server.js",
   "scripts": {
@@ -19,5 +19,9 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.5.7",
+    "@themesberg/react-bootstrap": "^1.4.1"
   }
 }
