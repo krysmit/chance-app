@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const jobSchema = require('./Jobs');
+const jobSchema = require('./Job');
 
 const userSchema = new Schema(
   {
@@ -25,7 +25,9 @@ const userSchema = new Schema(
       required: false,
     },
     // set SavedResume to be an array of data that adheres to the jobSchema
+
     // SavedResume: [jobSchema],
+
   },
   // set this to use virtual below
   {
@@ -51,9 +53,9 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 
 // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
-userSchema.virtual('bookCount').get(function () {
-  return this.SavedResume.length;
-});
+// userSchema.virtual('bookCount').get(function () {
+//   return this.SavedResume.length;
+// });
 
 userSchema.virtual('appliedJobs').get(function () {
   return this.appliedJobs.length;
