@@ -20,7 +20,14 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    resume: {
+      type: String,
+      required: false,
+    },
     // set SavedResume to be an array of data that adheres to the jobSchema
+
+    // SavedResume: [jobSchema],
+
   },
   // set this to use virtual below
   {

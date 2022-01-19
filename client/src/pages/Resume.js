@@ -16,6 +16,7 @@ const Resume = () => {
     console.log(education.current.value);
     console.log(pastJobs.current.value);
     console.log(skills.current.value);
+  
     // if (education.current.value.length > 500) {
     //   return;
     // }

@@ -66,26 +66,28 @@ db.once('open', async () => {
       jobId: 8,
       description:
         'As a personal grocery shopper, your job is to buy and deliver food and other products for customers. ... You help customers with order selection procedures, review orders with customers, safely handle and bag products, record any variances, maintain records, and communicate with call centers or store support.',
-      HourlyPay: 15.35,
+      HourlyPay: 15,
     },
     {
       jobTitle: 'Dog Handler',
       employer:'Ron Doggy Day Care',
       jobId: 9,
       description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      HourlyPay: 12.50,
+      HourlyPay: 12,
     },
     {
-      jobTitle: 'Slibrarian',
+      jobTitle: 'Librarian Asisstant',
       employer:'Northwestern University',
       jobId: 10,
       description:
         'Librarians are responsible for organizing and managing all resources in the library. They have the following responsibilities: Assist library visitors in conducting research and locating resources. Organize all library resources so they are easy to locate. ... Evaluate library inventory needs and place orders.',
-      HourlyPay: 2.99,
+      HourlyPay: 9,
     },
-  ]);
 
-  console.log('Jobs seeded');
+    ]);
+  
+    console.log('Jobs seeded');
+  
+    process.exit();
+  });
 
-  process.exit();
-});
