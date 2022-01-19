@@ -77,49 +77,26 @@ db.once('open', async () => {
       jobId: categories[3]._id,
       description:
         'As a personal grocery shopper, your job is to buy and deliver food and other products for customers. ... You help customers with order selection procedures, review orders with customers, safely handle and bag products, record any variances, maintain records, and communicate with call centers or store support.',
-      HourlyPay: 15.35,
+      HourlyPay: 15,
     },
     {
       jobTitle: 'Dog Handler',
       employer:'Ron Doggy Day Care',
       jobId: categories[4]._id,
       description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      HourlyPay: 12.50,
+      HourlyPay: 12,
     },
     {
-      jobTitle: 'Slibrarian',
+      jobTitle: 'Librarian Asisstant',
       employer:'Northwestern University',
       jobId: categories[4]._id,
       description:
         'Librarians are responsible for organizing and managing all resources in the library. They have the following responsibilities: Assist library visitors in conducting research and locating resources. Organize all library resources so they are easy to locate. ... Evaluate library inventory needs and place orders.',
-      HourlyPay: 2.99,
+      HourlyPay: 9,
     },
-  ]);
-
-  console.log('products seeded');
-
-  await User.deleteMany();
-
-  await User.create({
-    firstName: 'Pamela',
-    lastName: 'Washington',
-    email: 'pamela@testmail.com',
-    password: 'password12345',
-    orders: [
-      {
-        products: [products[0]._id, products[0]._id, products[1]._id]
-      }
-    ]
+    ]);
+  
+    console.log('Jobs seeded');
+  
+    process.exit();
   });
-
-  await User.create({
-    firstName: 'Elijah',
-    lastName: 'Holt',
-    email: 'eholt@testmail.com',
-    password: 'password12345'
-  });
-
-  console.log('users seeded');
-
-  process.exit();
-});
