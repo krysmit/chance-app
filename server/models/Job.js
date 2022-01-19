@@ -1,4 +1,5 @@
-const { Schema } = require('mongoose');
+const mongoose = require('mongoose')
+const { Schema } = mongoose
 
 // This is a subdocument schema, it won't become its own model but we'll use it as the schema for the User's `SavedResume` array in User.js
 const jobSchema = new Schema({
@@ -26,4 +27,6 @@ const jobSchema = new Schema({
   },
 });
 
-module.exports = jobSchema;
+const Job = mongoose.model("Job",jobSchema)
+
+module.exports = Job;
