@@ -30,22 +30,23 @@ const resolvers = {
             const token = signToken(user);
             return { token, user }
         },
-        saveResume: async (parent, { input }, { user }) => {
+        //saveResume? : async
+        saveJobs: async (parent, { input }, { user }) => {
             if (user) {
                 const updatedUser = await User.findByIdAndUpdate(
                     { _id: user._id },
-                    { $addToSet: { SavedResume: input } },
+                    { $addToSet: { SavedJobs: input } },
                     { new: true}
                 );
                 return updatedUser;
             }
             throw new AuthenticationError('You need to be logged in!')
         },
-        // removeBook: async (parents, { bookId }, { user }) => {
+        // removeJobs: async (parents, { bookId }, { user }) => {
         //     if (user) {
         //         const modifiedUser = await User.findOneAndUpdate(
         //             { _id: user._id },
-        //             { $pull: { savedBooks: { bookId: bookId } } },
+        //             { $pull: { savedJobs: { bookId: bookId } } },
         //             { new: true, runValidators: true }
         //         );
         //         return modifiedUser;

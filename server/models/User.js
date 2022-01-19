@@ -21,8 +21,8 @@ const userSchema = new Schema(
       required: true,
     },
     resume: {
-      type: String,
-      required: false,
+      type: Schema.Types.ObjectId,
+      ref: 'Resume'
     },
     // set SavedResume to be an array of data that adheres to the jobSchema
 
