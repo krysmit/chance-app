@@ -1,12 +1,14 @@
 # Give a Chance by Chance 
 
-## TL;DR
+## Description 
 Our mission is to enable less fortunate individuals to build skills and references to develop a solid resume and get a chance back at life. 
 Chance is a mobile-first platform that allows non-profits and local small businesses to post skill-based and community-involved jobs to help build skills and references. Chance is a web application made with the MERN stack and deployed on Heroku's servers.
 
 ## Deployed Link
+https://arcane-savannah-70532.herokuapp.com/
 
 ## GitHub Repository
+https://github.com/krysmit/chance-app
 
 ## Directory
 1. [User Story](#user-story)
@@ -40,9 +42,35 @@ THEN
 WHEN 
 THEN 
 ```
+
+## Installation:
+IF you want to run this project locally, the following must be installed on the command line:
+In the Root:
+* Package Manager - npm i
+* Node
+* Nodemon
+In the Server:
+* Apollo - @apollo/client and apollo-server-express
+* Bcrpyt
+* Express
+* GraphQL
+* Jsonwebtoken
+* Mongoose
+In the Client:
+* Apollo - @apollo/client and @apollo/react-hooks and apollo-boost
+* Bootstrap
+* Express
+* GraphQL
+* Jwt-decode
+* React
+
 ## Application Preview
 Full Preview
 ![Preview GIF](images/)
+
+## Technology
+This application uses a REACT front end with a graphQL and Node.js/Express.js server.
+The database is based in MongoDB and uses the Mongoose ODM. Graph QL is the query language used as well.
 
 # License
 
