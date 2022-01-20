@@ -6,7 +6,6 @@ import ApolloClient from 'apollo-boost';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchBooks from './pages/SearchBooks';
 import SavedJobs from './pages/SavedJobs';
-// import JobList from './pages/JobList';
 import Navbar from './components/Navbar';
 import Resume from './pages/Resume';
 import JobList from './pages/JobList';
