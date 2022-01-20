@@ -41,12 +41,13 @@ const resolvers = {
             return { token, user }
         },
         //saveResume? : async
-        saveJobs: async (parent, { input }, { user }) => {
-            if (user) {
+        saveResume: async (parent, args) => {
+            if (context.user) {          
+              const resume = await Resume.create(args)
                 const updatedUser = await User.findByIdAndUpdate(
-                    { _id: user._id },
-                    { $addToSet: { SavedJobs: input } },
-                    { new: true}
+                    { _id: context.user._id },
+                    { resume: resume._id },
+                    { new: true, runValidators: true}
                 );
                 return updatedUser;
             }
