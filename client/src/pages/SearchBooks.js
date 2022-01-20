@@ -90,8 +90,10 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
-          <h1>Welcome to Chance App!</h1>
-          {/* <Form onSubmit={handleFormSubmit}>
+          <h1>Give a Chance™</h1>
+          <h2>Our mission is to enable less than fortunate individuals to build skills and references 
+            to develop a solid resume and get a new chance back at life. </h2>
+          { /* <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={8}>
                 <Form.Control
@@ -100,7 +102,7 @@ const SearchBooks = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type='text'
                   size='lg'
-                  placeholder='Search for a book'
+                  placeholder='Search for an opportunity...'
                 />
               </Col>
               <Col xs={12} md={4}>
@@ -109,7 +111,7 @@ const SearchBooks = () => {
                 </Button>
               </Col>
             </Form.Row>
-          </Form> */}
+          </Form> */ }
         </Container>
       </Jumbotron>
 
