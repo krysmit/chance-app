@@ -23,9 +23,9 @@ const AppNavbar = () => {
             <Nav.Link as={Link} to='/resume' className='text-dark'>
                 <p>Resume Form</p>
               </Nav.Link>
-            <Nav.Link as={Link} to='/available' className='text-dark'>
+            {/* <Nav.Link as={Link} to='/available' className='text-dark'>
                 <p>Available Jobs</p>
-            </Nav.Link>
+            </Nav.Link> */}
               {/* if user is logged in show saved resume and logout */}
               {Auth.loggedIn() ? (
                 <>
