@@ -29,7 +29,7 @@ export const loginUser = (userData) => {
 };
 
 // save book data for a logged in user
-export const saveResume = (resumeData, token) => {
+export const resumeSaved = (resumeData, token) => {
   return fetch('/api/users', {
     method: 'PUT',
     headers: {

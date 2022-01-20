@@ -19,3 +19,8 @@ h6 {
 :root {
   background-color: white;
 }
+
+.bg-dark text-white {
+  width: 100px;
+  height: 200px%;
+}
