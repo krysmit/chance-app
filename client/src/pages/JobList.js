@@ -3,7 +3,7 @@ import { Jumbotron, Button, Container, CardColumns, Card } from 'react-bootstrap
 import { useQuery } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
 import Auth from '../utils/auth';
-import { removeResumeId } from '../utils/localStorage';
+import { moveJobId } from '../utils/localStorage';
 
 const AvailableJobs = () => {
     const { loading, data } = useQuery(GET_ME);
@@ -36,12 +36,10 @@ const AvailableJobs = () => {
 //     }
 //   };
 
-
     // if data isn't here yet, say so
     if (!loading) {
       return <h2>LOADING...</h2>;
     }
-  
   
     return (
       <>
@@ -64,6 +62,7 @@ const AvailableJobs = () => {
                     <Card.Title>{jobTitle}</Card.Title>
                     <p className='small'>Employer: {Employer}</p>
                     <Card.Text>{description}</Card.Text>
+                    <p className='small'>Hourly Pay: {HourlyPay}</p>
                     <Button className='btn-block btn-danger' onClick={() => handleMoveJob(jobId)}>
                       Apply to this job!
                     </Button>
