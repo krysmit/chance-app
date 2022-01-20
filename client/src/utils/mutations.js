@@ -25,8 +25,8 @@ export const ADD_USER = gql`
   }
 `;
 export const SAVE_RESUME = gql`
-  mutation resumeSaved($input: ResumeSaved) {
-    resumeSaved (input: $input) {
+  mutation saveResume($input: SavedResume) {
+    saveResume (input: $input) {
       username
       email
       education
