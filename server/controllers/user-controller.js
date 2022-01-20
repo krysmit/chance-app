@@ -70,7 +70,7 @@ module.exports = {
     }
     return res.json(updatedUser);
   },
-  async saveResume({ user, body }, res) {
+  async resumeSaved({ user, body }, res) {
     console.log(user);
     try {
       const updatedUser = await User.findOneAndUpdate(
