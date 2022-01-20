@@ -35,6 +35,7 @@ function App() {
           <Route exact path='/saved' component={SavedJobs} />
           <Route exact path='/resume' component={Resume} />
           <Route exact path='/joblist' component={JobList} />
+          
 
           {/* <Route exact path='/home' component={Home} /> */}
           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />

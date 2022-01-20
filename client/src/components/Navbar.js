@@ -20,22 +20,19 @@ const AppNavbar = () => {
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
-            <Nav.Link as={Link} to='/resume' className='text-dark'>
-                <p>Resume Form</p>
-              </Nav.Link>
-            {/* <Nav.Link as={Link} to='/available' className='text-dark'>
-                <p>Available Jobs</p>
-            </Nav.Link> */}
               {/* if user is logged in show saved resume and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  {/* <Nav.Link as={Link} to='/applied'>
-                    Applied Jobs
-                  </Nav.Link> */}
+                  <Nav.Link as={Link} to='/resume' className='text-dark'>
+                      <p>Resume Form</p>
+                    </Nav.Link>
+                  <Nav.Link as={Link} to='/joblist' className='text-dark'>
+                      <p>Available Jobs</p>
+                  </Nav.Link>
                   <Nav.Link className='text-dark' onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link className='text-dark' onClick={() => setShowModal(true)}>Login/ Sign up</Nav.Link>
+                <Nav.Link className='text-dark' onClick={() => setShowModal(true)}>Login/Sign up</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>

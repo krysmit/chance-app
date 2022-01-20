@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const jobSchema = require('./Job');
 
 const userSchema = new Schema(
   {
@@ -26,7 +25,7 @@ const userSchema = new Schema(
     },
     // set SavedJobs to be an array of data that adheres to the jobSchema
 
-    // SavedJobs: [jobSchema],
+    SavedJobs: [jobSchema],
 
   },
   // set this to use virtual below
