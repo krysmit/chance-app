@@ -10,7 +10,7 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
-  input ResumeSaved {
+  input SavedResume {
     username: String!
     email: String!
     education: String!
@@ -27,13 +27,13 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    resumeSaved(input: SavedResume): User
+    saveResume(input: SavedResume): User
     saveJobs(input: SavedJobs): User
   }
   type Query {
     me: User
     SaveJobs: [SavedJobs]
-    ResumeSaved: [ResumeSaved]
+    SaveResume: [SaveResume]
   }
 `;
 

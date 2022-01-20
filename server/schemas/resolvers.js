@@ -30,7 +30,7 @@ const resolvers = {
             const token = signToken(user);
             return { token, user }
         },
-        //resumeSaved? : async
+        //saveResume? : async
         saveJobs: async (parent, { input }, { user }) => {
             if (user) {
                 const updatedUser = await User.findByIdAndUpdate(
