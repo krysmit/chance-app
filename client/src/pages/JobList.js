@@ -9,32 +9,32 @@ const AvailableJobs = () => {
     const { loading, data } = useQuery(GET_ME);
     const userData = data?.me || [];
   
-//     const [moveJob, {error}] = useMutation(MOVE_BOOK);
+    const [moveJob, {error}] = useMutation(MOVE_BOOK);
 
-//     // create function that accepts the book's mongo _id value as param and deletes the book from the database
-//     const handleMoveJob = async (jobId) => {
-//     const token = Auth.loggedIn() ? Auth.getToken() : null;
+    // create function that accepts the book's mongo _id value as param and deletes the book from the database
+    const handleMoveJob = async (jobId) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     
-//     if (!token) {
-//       return false;s
-//     }
+    if (!token) {
+      return false;
+    }
 
-//     try {
-//       const response = await moveJob({
-//         variables: {jobId: jobId}
-//       });
+    try {
+      const response = await moveJob({
+        variables: {jobId: jobId}
+      });
 
-//       if (!response) {
-//         throw new Error('something went wrong!');
-//       }
+      if (!response) {
+        throw new Error('something went wrong!');
+      }
 
-//       // upon success, remove book's id from localStorage
-//       moveBookId(bookId);
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
+      // upon success, remove book's id from localStorage
+      moveBookId(bookId);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
     // if data isn't here yet, say so
     if (!loading) {
