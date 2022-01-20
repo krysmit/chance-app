@@ -7,12 +7,11 @@ export const GET_ME = gql`
       username
       email
       SavedResume {
-        bookId
-        authors
-        description
-        title
-        image
-        link
+        username
+        email
+        education
+        pastJobs
+        skills
       }
     }
   }
