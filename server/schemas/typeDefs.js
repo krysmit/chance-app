@@ -5,35 +5,26 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
+    resume:ID!
   }
   type Auth {
     token: ID!
     user: User
   }
-  input SavedResume {
+  type Resume {
     username: String!
     email: String!
     education: String!
     pastJobs: String!
     skills: String!
   }
-  input SavedJobs {
-    jobTitle: String!
-    employer: String!
-    description: String!
-    jobId: String!
-    HourlyPay: String!
-  }
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveResume(input: SavedResume): User
-    saveJobs(input: SavedJobs): User
+    saveResume(username: String!, email: String!, education: String!, pastJobs: String!, skills: String!): User
   }
   type Query {
     me: User
-    SaveJobs: [SavedJobs]
-    SaveResume: [SaveResume]
   }
 `;
 
