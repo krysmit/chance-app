@@ -18,7 +18,6 @@ const resolvers = {
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
- OtherJeffery
       if (!user) {
         throw new AuthenticationError("No user found with this email address!");
       }
@@ -27,7 +26,7 @@ const resolvers = {
             const user = await User.create(args);
             const token = signToken(user);
             return { token, user }
-        },
+        };
         //saveResume? : async
         saveJobs: async (parent, { input }, { user }) => {
             if (user) {
@@ -41,10 +40,8 @@ const resolvers = {
             throw new AuthenticationError(
               "You must be logged in to perform this action."
             );
-          },
-        },
-      };
-main
+          };
+        
 
       const correctPw = await user.isCorrectPassword(password);
 
