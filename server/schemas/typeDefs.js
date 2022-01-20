@@ -32,8 +32,7 @@ const typeDefs = gql`
   }
   type Query {
     me: User
-    SaveJobs: [SavedJobs]
-    ResumeSaved: [ResumeSaved]
+
   }
 `;
 
