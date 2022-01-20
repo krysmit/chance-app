@@ -38,31 +38,17 @@ const resolvers = {
         addUser: async (parent, args) => {
             const user = await User.create(args);
             const token = signToken(user);
-            return { token, user };
-          },
-      
-          saveResume: async (parent, { input }, context) => {
-            if (context.user) {
-              const updatedUser = await User.findOneAndUpdate(
-                { _id: context.user._id },
-                { $addToSet: { SavedResume: input } },
-                { new: true, runValidators: true }
-              );
-              return updatedUser;
-            }
-            throw new AuthenticationError(
-              "You must be logged in to perform this action."
-            );
-          },
-      
-          removeResume: async (parent, { bookId }, context) => {
-            if (context.user) {
-              const updatedUser = await User.findOneAndUpdate(
-                { _id: context.user._id },
-                { $pull: { SavedResume: { bookId: bookId } } },
-                { new: true }
-              );
-              return updatedUser;
+            return { token, user }
+        },
+        //saveResume? : async
+        saveJobs: async (parent, { input }, { user }) => {
+            if (user) {
+                const updatedUser = await User.findByIdAndUpdate(
+                    { _id: user._id },
+                    { $addToSet: { SavedJobs: input } },
+                    { new: true}
+                );
+                return updatedUser;
             }
             throw new AuthenticationError(
               "You must be logged in to perform this action."
