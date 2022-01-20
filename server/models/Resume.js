@@ -17,6 +17,7 @@ const resumeSchema = new Schema({
     education: {
         type: String,
         required: true,
+        unique: true,
     },
     pastJobs: {
         type: String,
