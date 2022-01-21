@@ -22,5 +22,30 @@ h6 {
 
 .bg-dark text-white {
   width: 100px;
-  height: 200px%;
+  height: 200px;
+}
+
+.form {
+  text-align: center;
+  padding-left: 50px;
+}
+
+.text-name {
+  width: 15%;
+}
+
+.text-ed {
+  width: 20%
+}
+
+.text-job {
+  width: 20%
+}
+
+.text-skills {
+  width: 30%
+}
+
+.button {
+  margin-left: 50px;
 }
