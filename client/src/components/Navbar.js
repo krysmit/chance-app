@@ -7,8 +7,8 @@ import LoginForm from './Login';
 
 import Auth from '../utils/auth';
 
-const AppNavbar = ( {currentPage} ) => {
-  // set modal display state
+const AppNavbar = () => {
+
   const [showModal, setShowModal] = useState(false);
 
   return (

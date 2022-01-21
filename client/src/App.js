@@ -9,7 +9,6 @@ import SavedJobs from './pages/SavedJobs';
 import Navbar from './components/Navbar';
 import Resume from './pages/Resume';
 import JobList from './pages/JobList';
-// import Home from './pages/home';
 
 const client = new ApolloClient({
   request: (operation) => {

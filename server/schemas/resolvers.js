@@ -40,7 +40,6 @@ const resolvers = {
             const token = signToken(user);
             return { token, user }
         },
-        //saveResume? : async
         saveResume: async (parent, args) => {
             if (context.user) {          
               const resume = await Resume.create(args)
