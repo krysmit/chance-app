@@ -11,37 +11,13 @@ https://arcane-savannah-70532.herokuapp.com/
 https://github.com/krysmit/chance-app
 
 ## Directory
-1. [User Story](#user-story)
-2. [Installation](#installation)
-3. [Application Preview](#application_preview)
-4. [Technology](#technology)
-5. [License](#license)
-6. [About](#about)
+1. [Installation](#installation)
+2. [Application Preview](#application_preview)
+3. [Technology](#technology)
+4. [License](#license)
+5. [About](#about)
 
-## User Story
-```md
-AS A user
-I WANT to find local jobs that can help me build references and skills
-SO THAT I can build out a resume and find a career more stable
-```
-```md
-GIVEN the Chance web app homepage
-WHEN I click on login button
-THEN I am sent to a different page where I can enter my credentials
-WHEN I click on enter afterwards
-THEN 
-WHEN 
-THEN 
-WHEN 
-WHEN 
-THEN 
-WHEN 
-THEN 
-WHEN 
-THEN 
-WHEN 
-THEN 
-```
+
 
 ## Installation:
 IF you want to run this project locally, the following must be installed on the command line:
