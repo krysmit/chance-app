@@ -23,7 +23,7 @@ module.exports = {
       return req;
     }
 
-  //   next();
+  
     return req;
   },
   signToken: function ({ username, email, _id }) {
