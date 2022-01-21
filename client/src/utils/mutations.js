@@ -35,5 +35,4 @@ export const SAVE_RESUME = gql`
     }
   }
 `;
-// export const SAVE_JOBS = gql`
-//   mutation savedJobs`
+

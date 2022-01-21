@@ -1,8 +1,5 @@
 import React, { useRef } from 'react';
 import { Form, InputGroup } from '@themesberg/react-bootstrap';
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
 
 const Resume = () => {
   const username = useRef('');
@@ -17,9 +14,7 @@ const Resume = () => {
     console.log(pastJobs.current.value);
     console.log(skills.current.value);
   
-    // if (education.current.value.length > 500) {
-    //   return;
-    // }
+
   }
 
 

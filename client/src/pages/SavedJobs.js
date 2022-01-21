@@ -9,44 +9,9 @@ const SavedJobs = () => {
   const { loading, data } = useQuery(GET_ME);
   const userData = data?.me || [];
 
-
-//   // use this to determine if `useEffect()` hook needs to run again
-//   const [removeBook, {error}] = useMutation(REMOVE_BOOK);
-
-  // create function that accepts the book's mongo _id value as param and deletes the book from the database
-//   const handleDeleteBook = async (bookId) => {
-//     const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-    // if (!token) {
-    //   return false;s
-    // }
-
-    // try {
-    //   const response = await removeBook({
-    //     variables: {bookId: bookId}
-    //   });
-
-//       if (!response) {
-//         throw new Error('something went wrong!');
-//       }
-
-//       // upon success, remove book's id from localStorage
-//       removeBookId(bookId);
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
-
-
-
-  // if data isn't here yet, say so
   if (!loading) {
     return <h2>LOADING...</h2>;
   }
-
-  // const savedBookIds = userData.SavedJobs.map((book) => book.bookId);
-  // saveBookIds(savedBookIds)
-
 
   return (
     <>

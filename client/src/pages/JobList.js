@@ -4,7 +4,6 @@ import { useQuery } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
-// import { moveJobId } from '../utils/localStorage';
 
 const AvailableJobs = () => {   
   
