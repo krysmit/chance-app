@@ -25,28 +25,28 @@ const Resume = () => {
 
 return (
 <div>
-<Form>
-  <Form.Group className="mb-3">
-  <Form.Label>Username</Form.Label>
-    <Form.Control ref={username} type="username" placeholder="Enter your username" />
-    <Form.Label>Email address</Form.Label>
-    <Form.Control ref={email} type="email" placeholder="Enter your email" />
+<Form className="form">
+  <Form.Group className="mb-3 text-name">
+  <Form.Label className="text-center">Username</Form.Label>
+    <Form.Control ref={username} type="username" placeholder="" />
+    <Form.Label className="email">Email address</Form.Label>
+    <Form.Control ref={email} type="email" placeholder="" />
   </Form.Group>
-  <Form.Group className="mb-3">
+  <Form.Group className="mb-3 text-ed">
     <Form.Label>Education</Form.Label>
-    <Form.Control ref={education} as="textarea" rows="3" placeholder=""/>
+    <Form.Control ref={education} as="textarea" rows="2" placeholder=""/>
   </Form.Group>
-  <Form.Group className="mb-3">
+  <Form.Group className="mb-3 text-job">
     <Form.Label>Past Jobs</Form.Label>
-    <Form.Control ref={pastJobs} as="textarea" rows="2" placeholder=""/>
+    <Form.Control ref={pastJobs} as="textarea" rows="4" placeholder=""/>
   </Form.Group>
-  <Form.Group className="mb-3">
+  <Form.Group className="mb-3 text-skills">
     <Form.Label>Skills</Form.Label>
     <Form.Control ref={skills} as="textarea" rows="2" placeholder=""/>
   </Form.Group>
 </Form>
 {/* {Auth.loggedIn() ? ( */}
-<button onClick={postResume}>
+<button  className='button' onClick={postResume}>
   Create Resume
 </button>
 {/* ) : (

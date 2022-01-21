@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './Signup';
 import LoginForm from './Login';
 
 import Auth from '../utils/auth';
 
-const AppNavbar = () => {
+const AppNavbar = ( {currentPage} ) => {
   // set modal display state
   const [showModal, setShowModal] = useState(false);
 
