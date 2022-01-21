@@ -66,8 +66,8 @@ In the Client:
 
 ## Application Preview
 Full Preview
-![Preview GIF](iclient/src/images/home_chance.png)
-![Preview GIF](iclient/src/images/chance_jobs.png)
+![Preview GIF](client/src/images/home_chance.png)
+![Preview GIF](client/src/images/chance_jobs.png)
 
 ## Technology
 This application uses a REACT front end with a graphQL and Node.js/Express.js server.
